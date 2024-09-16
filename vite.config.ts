@@ -34,6 +34,13 @@ export default defineApplicationConfig({
           ws: true,
           rewrite: (path) => path.replace(new RegExp(`^/mms-api`), ''),
         },
+        '/tkLive-api': {
+          target: 'http://localhost:9220',
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/tkLive-api`), ''),
+        },
+
       },
       warmup: {
         clientFiles: ['./index.html', './src/{views,components}/*'],
